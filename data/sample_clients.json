@@ -1,0 +1,48 @@
+[
+  {
+    "client_id": "customer-portal-spa",
+    "client_type": "public",
+    "redirect_uris": ["https://portal.example.test/callback"],
+    "grant_types": ["authorization_code", "refresh_token"],
+    "pkce_required": false,
+    "rotate_refresh_tokens": false,
+    "access_token_ttl_minutes": 120,
+    "refresh_token_ttl_days": 30,
+    "owner": "Digital Platform",
+    "environment": "prod",
+    "audience": "customer-api",
+    "wildcard_redirects": false,
+    "implicit_enabled": true
+  },
+  {
+    "client_id": "billing-service",
+    "client_type": "confidential",
+    "redirect_uris": ["https://billing.example.test/oauth/callback"],
+    "grant_types": ["authorization_code"],
+    "pkce_required": true,
+    "rotate_refresh_tokens": true,
+    "access_token_ttl_minutes": 30,
+    "refresh_token_ttl_days": 7,
+    "owner": "Finance Engineering",
+    "environment": "prod",
+    "audience": "billing-api",
+    "confidential_secret_managed": true
+  },
+  {
+    "client_id": "legacy-ops-console",
+    "client_type": "confidential",
+    "redirect_uris": ["http://legacy.example.test/*"],
+    "grant_types": ["password", "authorization_code"],
+    "pkce_required": false,
+    "rotate_refresh_tokens": false,
+    "access_token_ttl_minutes": 240,
+    "refresh_token_ttl_days": 90,
+    "owner": "",
+    "environment": "prod",
+    "audience": "ops-api",
+    "allow_http_redirects": true,
+    "wildcard_redirects": true,
+    "resource_owner_password_enabled": true,
+    "confidential_secret_managed": false
+  }
+]
